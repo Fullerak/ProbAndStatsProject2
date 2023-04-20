@@ -29,25 +29,25 @@ public class PSS {
 		
 		ArrayList<PSS> plot = new ArrayList<PSS>();
 		
-		int x = 0;
-		int y = 0;
+		int xPoint = 0;
+		int yPoint = 0;
 		
 		for(int i = min; i <= max; i = i + range) {
 			
 			if (i == min) {
 				
-				x = min;
+				xPoint = min;
 				
 			}
 			else {
 				
-				x += range;
+				xPoint += range;
 				
 			}
 			
-			y = 2 * x + 3;
+			yPoint = (int) (Math.pow(xPoint, 2) + 4);
 			
-			plot.add(new PSS(x, y));
+			plot.add(new PSS(xPoint, yPoint));
 		}
 		
 		File csv = new File("Graph.csv");
@@ -61,6 +61,6 @@ public class PSS {
 		out.close();
 	}
 	
-	
-	
 }
+
+
