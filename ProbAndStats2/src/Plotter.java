@@ -3,12 +3,12 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-public class PSS {
+public class Plotter {
 	
 	private int x;
 	private int y;
 
-	PSS(int xVal, int yVal) {
+	Plotter(int xVal, int yVal) {
 		
 		x = xVal;
 		y = yVal;
@@ -27,7 +27,7 @@ public class PSS {
 	
 	public static void data(int min, int max, int range) throws FileNotFoundException{
 		
-		ArrayList<PSS> plot = new ArrayList<PSS>();
+		ArrayList<Plotter> plot = new ArrayList<Plotter>();
 		
 		int xPoint = 0;
 		int yPoint = 0;
@@ -47,13 +47,13 @@ public class PSS {
 			
 			yPoint = (int) (Math.pow(xPoint, 2) + 4);
 			
-			plot.add(new PSS(xPoint, yPoint));
+			plot.add(new Plotter(xPoint, yPoint));
 		}
 		
 		File csv = new File("Graph.csv");
 		PrintWriter out = new PrintWriter(csv);
 		
-		for (PSS graph :plot) {
+		for (Plotter graph :plot) {
 			
 			out.printf("%d, %d\n", graph.getX(), graph.getY());
 		}
