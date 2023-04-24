@@ -45,7 +45,7 @@ public class Plotter {
 				
 			}
 			
-			yPoint = (int) (Math.pow(xPoint, 2) + 4);
+			yPoint = (int) (Math.pow(xPoint, 2) + 3);
 			
 			plot.add(new Plotter(xPoint, yPoint));
 		}

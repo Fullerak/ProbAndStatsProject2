@@ -8,6 +8,10 @@ public class PSSTester {
 		
 		test.data(-15, 15, 1);
 		
+		Salter.salt(29);
+		
+		Smoother.smooth(2, 4);
+		
 
 	}
 
