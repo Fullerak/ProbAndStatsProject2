@@ -8,6 +8,7 @@ public class Plotter {
 	private int x;
 	private int y;
 
+	//obj w values x and y as points
 	Plotter(int xVal, int yVal) {
 		
 		x = xVal;
@@ -15,6 +16,7 @@ public class Plotter {
 		
 	}
 	
+	//need the get methods for later
 	public int getX() {
 		
 		return x;
@@ -25,13 +27,7 @@ public class Plotter {
 		return y;
 	}
 	
-	public int printMethod(ArrayList<Plotter> plot) {
-		for(int i=0;i<plot.size();i++) {
-			System.out.println(plot.indexOf(i));
-		}
-		return 0;
-	}
-	
+	//creating all the points for a given function which i have hard coded, adding it to a arr list of the class
 	public static void data(int min, int max, int range) throws FileNotFoundException{
 		
 		ArrayList<Plotter> plot = new ArrayList<Plotter>();
@@ -62,6 +58,7 @@ public class Plotter {
 			System.out.println(graph.getX() + graph.getY());
 		}
 		
+		//inputting into the csv
 		File csv = new File("Graph.csv");
 		PrintWriter out = new PrintWriter(csv);
 		

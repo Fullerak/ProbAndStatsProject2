@@ -41,7 +41,7 @@ public class Salter {
 					temp = Integer.valueOf(row[i].trim()) + ThreadLocalRandom.current().nextInt(-maxVal, maxVal+1);
 					row[i] = String.valueOf(temp);
 				}
-				
+				//using a temp array for point values
 				for(int i = 0; i < row.length; i++)
 				{
 					arr.add(Integer.valueOf(row[i]));

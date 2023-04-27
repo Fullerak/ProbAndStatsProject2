@@ -19,10 +19,12 @@ public class Smoother {
 		
 		try
 		{
+		//making a new csv for the smoother graph
 			File smoothed = new File("SmoothedGraph.csv");
 			PrintWriter out = new PrintWriter(smoothed);
 			reader = new BufferedReader(new FileReader(file));
 			
+			//keeping the row for each so we can grab the values split and smooth y
 			ArrayList<Integer> arr = new ArrayList<Integer>();
 			String[] row;
 			
@@ -32,7 +34,7 @@ public class Smoother {
 					arr.add(Integer.valueOf(row[i].trim()));
 				}
 			}
-			//determines how many times the logic is run
+			//determines how many times the logic is run, even though this is inefficient it is all i could think of at the time
 			for(int i = 0; i<repeat;i++) {
 				for(int j=1; j<arr.size();j+=2) {
 					for(int k=j-(num*2);k <= j + (num*2);k+=2) {
@@ -49,6 +51,7 @@ public class Smoother {
 				}
 				
 			}
+			//outputting into the csv by points
 			for(int i = 0; i < arr.size(); i+=2)
 			{
 				out.printf("%d, %d\n", arr.get(i), arr.get(i+1));
