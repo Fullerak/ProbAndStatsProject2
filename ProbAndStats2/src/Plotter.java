@@ -25,6 +25,13 @@ public class Plotter {
 		return y;
 	}
 	
+	public int printMethod(ArrayList<Plotter> plot) {
+		for(int i=0;i<plot.size();i++) {
+			System.out.println(plot.indexOf(i));
+		}
+		return 0;
+	}
+	
 	public static void data(int min, int max, int range) throws FileNotFoundException{
 		
 		ArrayList<Plotter> plot = new ArrayList<Plotter>();
@@ -48,6 +55,11 @@ public class Plotter {
 			yPoint = (int) (Math.pow(xPoint, 2) + 3);
 			
 			plot.add(new Plotter(xPoint, yPoint));
+		}
+		
+		for (Plotter graph :plot) {
+			
+			System.out.println(graph.getX() + graph.getY());
 		}
 		
 		File csv = new File("Graph.csv");

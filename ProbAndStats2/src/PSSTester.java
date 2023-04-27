@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class PSSTester {
 
@@ -11,7 +12,6 @@ public class PSSTester {
 		Salter.salt(29);
 		
 		Smoother.smooth(2, 4);
-		
 
 	}
 

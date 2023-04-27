@@ -15,14 +15,13 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.plot.PlotOrientation; 
 import org.jfree.data.xy.XYSeriesCollection; 
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
-
-public class LibraryGraphing extends ApplicationFrame{
+public class LibrarySalting extends ApplicationFrame{
 	
-	private XYSeriesCollection dataset = new XYSeriesCollection();
+private XYSeriesCollection dataset = new XYSeriesCollection();
 	
 	private XYSeries series = new XYSeries("data");
 //
-	public LibraryGraphing( String applicationTitle, String chartTitle ) throws FileNotFoundException {
+	public LibrarySalting( String applicationTitle, String chartTitle ) throws FileNotFoundException {
 	      super(applicationTitle);
 	      JFreeChart plot = ChartFactory.createXYLineChart(chartTitle , "x" ,"y" ,createDataset() ,PlotOrientation.VERTICAL ,
 	    		  true , true , false);
@@ -75,6 +74,7 @@ public class LibraryGraphing extends ApplicationFrame{
 		
 		}
 		
+		
 		addData(plot);
 		
 		dataset.addSeries(series);
@@ -84,17 +84,18 @@ public class LibraryGraphing extends ApplicationFrame{
 	}
 	
 	public void addData(ArrayList<Plotter> OGplot){
+		int max = 15;
+		int min = -15;
+		
 		
 		//XYSeries series = new XYSeries("data");
 		
 		for (Plotter graph :OGplot) {
 			
-			series.add(graph.getX(),graph.getY());
+			series.add(graph.getX(),graph.getY() + Math.random() * (max-min));
+			
 		}
 		
 	}
-	
-	
-	
-}
 
+}
